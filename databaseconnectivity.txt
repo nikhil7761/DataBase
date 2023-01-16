@@ -1,0 +1,86 @@
+
+
+
+1.for loading the driver 
+
+ 
+              class.forName("com.mysql.jdbc.Driver")//
+
+OR 
+
+              DriverManager.RegistorDriver(new com.mysql.jdbc.Driver());
+
+
+
+2.Create a Connection......Build the Road between javaapi  and database
+ 
+
+              Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/databasename",root,root);
+
+
+
+3.query statements 1.general statement 2.prepared statement ? ? ? ? 3. callble statement
+
+
+  String q=select * from students;   
+
+  statement stmt=con.createstatement();
+
+  Resultset set= stmt.excuteQuery(q);
+
+ 
+ 4.process the data
+
+ for showing the data
+
+    while(set.next())
+    {
+
+      int id= set.getid("column name")
+   
+      String name=set.getString("Studentname"); 
+ 
+      System.out.println(i);
+
+      System.out.println(name);
+
+     }
+
+
+5.close the connnection();        
+
+   con.close();
+  
+
+
+
+
+                        create table Nikhil
+                        ( 
+                        Id int,
+                        Name varchar(40),
+                        Age int,
+                        Department int
+                        ); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
